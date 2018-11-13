@@ -61,7 +61,7 @@ modules:
           - rm bluejeans.rpm
           - mv opt/bluejeans/* .
           - rm -r opt
-          - chmod 744 bluejeans
+          - chmod 755 bluejeans
       - type: script
         dest-filename: bluejeans
         commands:
