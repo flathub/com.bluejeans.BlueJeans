@@ -14,6 +14,7 @@ finish-args:
   - --device=all
   - --socket=pulseaudio
   - --share=network
+  - --persist=.config
   - --persist=.macromedia
 cleanup:
   - /include
