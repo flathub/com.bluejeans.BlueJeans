@@ -66,7 +66,8 @@ modules:
       - type: script
         dest-filename: bluejeans
         commands:
-          - exec /app/extra/bluejeans "$@"
+          - "[ -d /var/home ] && unlink /home && mv /var/home /home"
+          - "exec /app/extra/bluejeans $@"
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
       - install -D bluejeans /app/bin/bluejeans
