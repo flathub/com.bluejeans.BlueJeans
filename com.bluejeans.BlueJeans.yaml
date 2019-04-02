@@ -16,6 +16,7 @@ finish-args:
   - --share=network
   - --persist=.config
   - --persist=.macromedia
+  - --filesystem=xdg-videos
 cleanup:
   - /include
   - /lib/*.a
