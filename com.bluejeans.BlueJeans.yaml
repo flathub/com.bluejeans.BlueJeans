@@ -4,6 +4,7 @@ base-version: '18.08'
 runtime: org.freedesktop.Platform
 runtime-version: '18.08'
 sdk: org.freedesktop.Sdk
+separate-locales: false
 command: bluejeans
 tags:
   - proprietary
