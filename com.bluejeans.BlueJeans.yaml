@@ -1,5 +1,5 @@
 app-id: com.bluejeans.BlueJeans
-base: io.atom.electron.BaseApp
+base: org.electronjs.Electron2.BaseApp
 base-version: '19.08'
 runtime: org.freedesktop.Platform
 runtime-version: '19.08'
@@ -16,8 +16,9 @@ finish-args:
   - --socket=pulseaudio
   - --share=network
   - --persist=.config
-  - --persist=.macromedia
+  - --persist=.pki
   - --filesystem=xdg-videos
+  - --talk-name=org.freedesktop.Notifications
 cleanup:
   - /include
   - /lib/*.a
@@ -53,28 +54,31 @@ modules:
       - type: file
         path: com.bluejeans.BlueJeans.png
       - type: extra-data
-        filename: bluejeans.rpm
-        url: https://swdl.bluejeans.com/desktop/linux/1.37/1.37.22/bluejeans-1.37.22.x86_64.rpm
-        sha256: 821fac8ab2fa18a018968143a3ca6f0e1aa2f03e3061676e07e73c2adff80cc2
-        size: 48029216
+        filename: BlueJeans.rpm
+        url: https://swdl.bluejeans.com/desktop-app/linux/2.17.0/BlueJeans_2.17.0.11.rpm
+        sha256: c8282ee53e394c70c88d5a1a535d02ffaeb3115031a8a4ea5dc6f355ae5db2c0
+        size: 78124344
       - type: script
         dest-filename: apply_extra
         commands:
-          - rpm2cpio bluejeans.rpm | cpio -idmv
-          - rm bluejeans.rpm
-          - mv opt/bluejeans/* .
-          - rm -r opt
-          - chmod 755 bluejeans
+          - rpm2cpio BlueJeans.rpm | cpio -idmv
+          - rm BlueJeans.rpm
+          - mv opt/BlueJeans/* .
+          - rm -r opt usr
+          - chmod 755 bluejeans-v2
+          - chmod 755 resources/BluejeansHelper
       - type: script
         dest-filename: bluejeans
         commands:
           - "[ -d /var/home ] && unlink /home && mv /var/home /home"
-          - "export LD_LIBRARY_PATH=/app/lib"
-          - "exec /app/extra/bluejeans $@"
+          - "[ ! -d ~/.config/bluejeans-v2/logs ] && mkdir -p ~/.config/bluejeans-v2/logs"
+          - "/app/extra/resources/BluejeansHelper &"
+          - "HELPER_PID=$!"
+          - "/app/extra/bluejeans-v2 $@"
+          - "kill -9 $HELPER_PID"
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
       - install -D bluejeans /app/bin/bluejeans
-      - ARCH_TRIPLE="$(gcc --print-multiarch)" && ln -s "/usr/lib/${ARCH_TRIPLE}/libudev.so.1" /app/lib/libudev.so.0
       - install -Dm 644 com.bluejeans.BlueJeans.appdata.xml -t /app/share/appdata
       - install -Dm 644 com.bluejeans.BlueJeans.desktop -t /app/share/applications
-      - install -Dm 644 com.bluejeans.BlueJeans.png -t /app/share/icons/hicolor/128x128/apps
+      - install -Dm 644 com.bluejeans.BlueJeans.png -t /app/share/icons/hicolor/256x256/apps
