@@ -70,7 +70,7 @@ modules:
         commands:
           - "[ -d /var/home ] && unlink /home && mv /var/home /home"
           - "export LD_LIBRARY_PATH=/app/lib"
-          - "exec /app/extra/bluejeans $@"
+          - "exec /app/extra/bluejeans $@ 2>&1 | grep -v :INFO:"
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
       - install -D bluejeans /app/bin/bluejeans
