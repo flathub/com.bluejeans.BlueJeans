@@ -1,10 +1,11 @@
 [Desktop Entry]
 Name=BlueJeans
 Comment=Blue Jeans Video Conferencing tool
-Exec=bluejeans %U
+Exec=bluejeans-v2 %U
 Terminal=false
 Type=Application
 Icon=com.bluejeans.BlueJeans
+StartupWMClass=BlueJeans
 Categories=Network;VideoConference;
 MimeType=x-scheme-handler/bjn;
 Keywords=BlueJeans;

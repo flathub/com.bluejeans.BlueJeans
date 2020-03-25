@@ -54,27 +54,27 @@ modules:
         path: com.bluejeans.BlueJeans.png
       - type: extra-data
         filename: bluejeans.rpm
-        url: https://swdl.bluejeans.com/desktop/linux/1.37/1.37.22/bluejeans-1.37.22.x86_64.rpm
-        sha256: 821fac8ab2fa18a018968143a3ca6f0e1aa2f03e3061676e07e73c2adff80cc2
-        size: 48029216
+        url: https://swdl.bluejeans.com/desktop-app/linux/2.1.0/BlueJeans.rpm
+        sha256: ad9dcc9d4026318128eac686cad635854cbba94b6a13d4d12d67bea2e80510fe
+        size: 70106100
       - type: script
         dest-filename: apply_extra
         commands:
           - rpm2cpio bluejeans.rpm | cpio -idmv
           - rm bluejeans.rpm
+          - rm -rf usr/share/applications/
           - mv opt/bluejeans/* .
           - rm -r opt
-          - chmod 755 bluejeans
+          - chmod 755 bluejeans-v2
       - type: script
-        dest-filename: bluejeans
+        dest-filename: bluejeans-v2
         commands:
           - "[ -d /var/home ] && unlink /home && mv /var/home /home"
           - "export LD_LIBRARY_PATH=/app/lib"
-          - "exec /app/extra/bluejeans $@ 2>&1 | grep -v -E \".*Gtk-Message:.*Failed to load module.*|:INFO:\""
+          - "exec /app/extra/bluejeans-v2 $@ 2>&1 | grep -v -E \".*Gtk-Message:.*Failed to load module.*|:INFO:\""
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
-      - install -D bluejeans /app/bin/bluejeans
-      - ARCH_TRIPLE="$(gcc --print-multiarch)" && ln -s "/usr/lib/${ARCH_TRIPLE}/libudev.so.1" /app/lib/libudev.so.0
+      - install -D bluejeans-v2 /app/bin/bluejeans-v2
       - install -Dm 644 com.bluejeans.BlueJeans.appdata.xml -t /app/share/appdata
       - install -Dm 644 com.bluejeans.BlueJeans.desktop -t /app/share/applications
-      - install -Dm 644 com.bluejeans.BlueJeans.png -t /app/share/icons/hicolor/128x128/apps
+      - install -Dm 644 com.bluejeans.BlueJeans.png -t /app/share/icons/hicolor/512x512/apps
