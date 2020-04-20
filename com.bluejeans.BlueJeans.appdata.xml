@@ -2,23 +2,23 @@
 <component type="desktop">
   <id>com.bluejeans.BlueJeans</id>
   <launchable type="desktop-id">com.bluejeans.BlueJeans.desktop</launchable>
-  <name>Blue Jeans</name>
-  <summary>Blue Jeans Video Conferencing tool</summary>
+  <name>BlueJeans</name>
+  <summary>BlueJeans Desktop App</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
-  <developer_name>Blue Jeans Network</developer_name>
+  <developer_name>BlueJeans Networks</developer_name>
   <url type="homepage">https://www.bluejeans.com</url>
   <description>
     <p>
-      Blue Jeans is the meetings platform for the modern workplace. We bring video, audio and web conferencing
+      BlueJeans is the meetings platform for the modern workplace. We bring video, audio and web conferencing
       together with the collaboration tools people use every day.
     </p>
     <p>
-      Blue Jeans provides an unparalleled meeting experience with one-touch meeting joins from your favorite scheduling
+      BlueJeans provides an unparalleled meeting experience with one-touch meeting joins from your favorite scheduling
       and collaboration tools, devices and room systems.
     </p>
     <p>
-      NOTE: This wrapper is not verified by, affiliated with, or supported by Blue Jeans Network.
+      NOTE: This wrapper is not verified by, affiliated with, or supported by BlueJeans Networks.
     </p>
   </description>
   <screenshots>
