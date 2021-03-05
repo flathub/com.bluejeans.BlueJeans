@@ -14,7 +14,6 @@ finish-args:
   - --socket=pulseaudio
   - --share=network
   - --persist=.config
-  - --persist=.macromedia
   - --filesystem=xdg-videos
 cleanup:
   - /include
