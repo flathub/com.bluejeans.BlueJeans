@@ -74,7 +74,6 @@ modules:
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
       - install -D bluejeans /app/bin/bluejeans
-      - ARCH_TRIPLE="$(gcc --print-multiarch)" && ln -s "/usr/lib/${ARCH_TRIPLE}/libudev.so.1" /app/lib/libudev.so.0
       - install -Dm 644 com.bluejeans.BlueJeans.appdata.xml -t /app/share/appdata
       - install -Dm 644 com.bluejeans.BlueJeans.desktop -t /app/share/applications
       - install -Dm 644 com.bluejeans.BlueJeans.png -t /app/share/icons/hicolor/128x128/apps
