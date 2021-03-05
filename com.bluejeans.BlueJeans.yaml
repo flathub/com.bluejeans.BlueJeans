@@ -49,7 +49,23 @@ modules:
       - type: file
         path: com.bluejeans.BlueJeans.desktop
       - type: file
-        path: com.bluejeans.BlueJeans.png
+        path: com.bluejeans.BlueJeans-128x128.png
+      - type: file
+        path: com.bluejeans.BlueJeans-16x16.png
+      - type: file
+        path: com.bluejeans.BlueJeans-24x24.png
+      - type: file
+        path: com.bluejeans.BlueJeans-256x256.png
+      - type: file
+        path: com.bluejeans.BlueJeans-32x32.png
+      - type: file
+        path: com.bluejeans.BlueJeans-48x48.png
+      - type: file
+        path: com.bluejeans.BlueJeans-512x512.png
+      - type: file
+        path: com.bluejeans.BlueJeans-64x64.png
+      - type: file
+        path: com.bluejeans.BlueJeans-96x96.png
       - type: extra-data
         filename: bluejeans.rpm
         url: https://swdl.bluejeans.com/desktop-app/linux/2.21.2/BlueJeans_2.21.2.1.rpm
@@ -84,4 +100,4 @@ modules:
       - install -D bluejeans /app/bin/bluejeans
       - install -Dm 644 com.bluejeans.BlueJeans.appdata.xml -t /app/share/appdata
       - install -Dm 644 com.bluejeans.BlueJeans.desktop -t /app/share/applications
-      - install -Dm 644 com.bluejeans.BlueJeans.png -t /app/share/icons/hicolor/128x128/apps
+      - for i in com.bluejeans.BlueJeans-*.png ; do install -Dm 644 $i /app/share/icons/hicolor/`echo $i | sed 's,com.bluejeans.BlueJeans-,,' | sed 's,.png,,'`/apps/com.bluejeans.BlueJeans.png ; done
