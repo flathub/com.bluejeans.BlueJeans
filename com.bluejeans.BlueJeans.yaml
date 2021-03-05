@@ -68,9 +68,10 @@ modules:
       - type: script
         dest-filename: bluejeans
         commands:
-          - "[ -d /var/home ] && unlink /home && mv /var/home /home"
-          - "export LD_LIBRARY_PATH=/app/lib"
-          - "exec /app/extra/bluejeans $@ 2>&1 | grep -v -E \".*Gtk-Message:.*Failed to load module.*|:INFO:\""
+          - '[ -d /var/home ] && unlink /home && mv /var/home /home'
+          - export LD_LIBRARY_PATH=/app/lib
+          - exec /app/extra/bluejeans $@ 2>&1 | grep -v -E ".*Gtk-Message:.*Failed
+            to load module.*|:INFO:"
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
       - install -D bluejeans /app/bin/bluejeans
