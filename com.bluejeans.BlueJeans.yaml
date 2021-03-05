@@ -54,9 +54,9 @@ modules:
         path: com.bluejeans.BlueJeans.png
       - type: extra-data
         filename: bluejeans.rpm
-        url: https://swdl.bluejeans.com/desktop/linux/1.37/1.37.22/bluejeans-1.37.22.x86_64.rpm
-        sha256: 821fac8ab2fa18a018968143a3ca6f0e1aa2f03e3061676e07e73c2adff80cc2
-        size: 48029216
+        url: https://swdl.bluejeans.com/desktop-app/linux/2.21.2/BlueJeans_2.21.2.1.rpm
+        sha256: 5a8a997b3954cec032550c87aff76a0708766065798296f349e90c5bda647461
+        size: 82664412
         x-checker-data:
           type: html
           url: https://www.bluejeans.com/downloads
