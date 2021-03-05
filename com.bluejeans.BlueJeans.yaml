@@ -88,16 +88,14 @@ modules:
           - rm -r opt usr
           - chmod 755 bluejeans-v2
           - chmod 755 /app/extra/resources/BluejeansHelper
-      - type: script
-        dest-filename: bluejeans
-        commands:
-          - '[ -d /var/home ] && unlink /home && mv /var/home /home'
-          - export LD_LIBRARY_PATH=/app/lib
-          - exec /app/extra/bluejeans-v2 $@ 2>&1 | grep -v -E ".*Gtk-Message:.*Failed
-            to load module.*|:INFO:"
+      - type: file
+        path: bluejeans-single-app.c
+      - type: file
+        path: Makefile
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
-      - install -D bluejeans /app/bin/bluejeans
       - install -Dm 644 com.bluejeans.BlueJeans.appdata.xml -t /app/share/appdata
       - install -Dm 644 com.bluejeans.BlueJeans.desktop -t /app/share/applications
       - for i in com.bluejeans.BlueJeans-*.png ; do install -Dm 644 $i /app/share/icons/hicolor/`echo $i | sed 's,com.bluejeans.BlueJeans-,,' | sed 's,.png,,'`/apps/com.bluejeans.BlueJeans.png ; done
+      - make
+      - make install
