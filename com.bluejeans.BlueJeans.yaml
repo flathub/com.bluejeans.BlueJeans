@@ -57,6 +57,14 @@ modules:
         url: https://swdl.bluejeans.com/desktop/linux/1.37/1.37.22/bluejeans-1.37.22.x86_64.rpm
         sha256: 821fac8ab2fa18a018968143a3ca6f0e1aa2f03e3061676e07e73c2adff80cc2
         size: 48029216
+        x-checker-data:
+          type: html
+          url: https://www.bluejeans.com/downloads
+          version-pattern: <a href="https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_([\d\.-]*).rpm"
+            class="Button" aria-label="Download BlueJeans for Linux">
+          url-pattern: <a href="(https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_[\d\.-]*.rpm)"
+            class="Button" aria-label="Download BlueJeans for Linux">
+          only-arches: [x86_64]
       - type: script
         dest-filename: apply_extra
         commands:
