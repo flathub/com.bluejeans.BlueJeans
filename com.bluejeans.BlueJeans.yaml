@@ -60,7 +60,7 @@ modules:
       - type: script
         dest-filename: apply_extra
         commands:
-          - rpm2cpio bluejeans.rpm | cpio -idmv
+          - rpm2cpio bluejeans.rpm | cpio -idm
           - rm bluejeans.rpm
           - mv opt/bluejeans/* .
           - rm -r opt
