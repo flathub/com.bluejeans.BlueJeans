@@ -70,15 +70,16 @@ modules:
         commands:
           - rpm2cpio bluejeans.rpm | cpio -idm
           - rm bluejeans.rpm
-          - mv opt/bluejeans/* .
-          - rm -r opt
-          - chmod 755 bluejeans
+          - mv opt/BlueJeans/* .
+          - rm -r opt usr
+          - chmod 755 bluejeans-v2
+          - chmod 755 /app/extra/resources/BluejeansHelper
       - type: script
         dest-filename: bluejeans
         commands:
           - '[ -d /var/home ] && unlink /home && mv /var/home /home'
           - export LD_LIBRARY_PATH=/app/lib
-          - exec /app/extra/bluejeans $@ 2>&1 | grep -v -E ".*Gtk-Message:.*Failed
+          - exec /app/extra/bluejeans-v2 $@ 2>&1 | grep -v -E ".*Gtk-Message:.*Failed
             to load module.*|:INFO:"
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
