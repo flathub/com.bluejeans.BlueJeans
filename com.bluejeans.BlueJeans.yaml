@@ -15,6 +15,7 @@ finish-args:
   - --share=network
   - --persist=.config
   - --filesystem=xdg-videos
+  - --env=LD_PRELOAD=/app/lib/libmock-udev.so
 cleanup:
   - /include
   - /lib/*.a
@@ -89,6 +90,8 @@ modules:
           - chmod 755 /app/extra/resources/BluejeansHelper
       - type: file
         path: bluejeans-single-app.c
+      - type: file
+        path: mock-udev.c
       - type: file
         path: Makefile
     build-commands:
