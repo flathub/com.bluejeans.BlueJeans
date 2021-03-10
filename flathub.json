@@ -1,4 +1,3 @@
 {
-  "only-arches": ["x86_64"],
-  "end-of-life": "Old BlueJeans version does not work anymore, new one is not compatible with Flatpak."
+  "only-arches": ["x86_64"]
 }
