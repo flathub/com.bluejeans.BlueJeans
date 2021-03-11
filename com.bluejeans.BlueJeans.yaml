@@ -1,6 +1,6 @@
 app-id: com.bluejeans.BlueJeans
 runtime: org.freedesktop.Platform
-runtime-version: '19.08'
+runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 command: bluejeans
@@ -31,6 +31,8 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.gz
         sha256: 08a35e92deb3c85d269a0059a27d4140a9667a6369459299d08c17f713a92e73
+      - type: patch
+        path: cpio-2.13-mutiple-definition.patch
 
   - name: rpm2cpio
     buildsystem: simple
