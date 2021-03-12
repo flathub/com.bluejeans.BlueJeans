@@ -60,7 +60,7 @@ activate (GApplication *app)
 
   /* Create logs directory */
   logs_dir = g_build_filename (g_get_home_dir(), ".config", "bluejeans-v2", "logs", NULL);
-  g_mkdir_with_parents (logs_dir, 700);
+  g_mkdir_with_parents (logs_dir, 0700);
 
   /* Launch BluejeansHelper */
   if (!launch ((char **) helper_args, G_SPAWN_DEFAULT, &helper_pid, &error)) {
