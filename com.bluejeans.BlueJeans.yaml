@@ -72,9 +72,9 @@ modules:
         path: com.bluejeans.BlueJeans-96x96.png
       - type: extra-data
         filename: bluejeans.rpm
-        url: https://swdl.bluejeans.com/desktop-app/linux/2.21.2/BlueJeans_2.21.2.1.rpm
-        sha256: 5a8a997b3954cec032550c87aff76a0708766065798296f349e90c5bda647461
-        size: 82664412
+        url: https://swdl.bluejeans.com/desktop-app/linux/2.21.3/BlueJeans_2.21.3.2.rpm
+        sha256: 6bf444bb192a6662cb6bb37709481401dabbe15303f43d746bf4b1da33a3d500
+        size: 82671652
         x-checker-data:
           type: html
           url: https://www.bluejeans.com/downloads
@@ -102,6 +102,8 @@ modules:
       - install -D apply_extra /app/bin/apply_extra
       - install -Dm 644 com.bluejeans.BlueJeans.appdata.xml -t /app/share/appdata
       - install -Dm 644 com.bluejeans.BlueJeans.desktop -t /app/share/applications
-      - for i in com.bluejeans.BlueJeans-*.png ; do install -Dm 644 $i /app/share/icons/hicolor/`echo $i | sed 's,com.bluejeans.BlueJeans-,,' | sed 's,.png,,'`/apps/com.bluejeans.BlueJeans.png ; done
+      - for i in com.bluejeans.BlueJeans-*.png ; do install -Dm 644 $i /app/share/icons/hicolor/`echo
+        $i | sed 's,com.bluejeans.BlueJeans-,,' | sed 's,.png,,'`/apps/com.bluejeans.BlueJeans.png
+        ; done
       - make
       - make install
