@@ -12,6 +12,7 @@ finish-args:
   - --share=ipc
   - --device=all
   - --socket=pulseaudio
+  - --filesystem=xdg-run/pipewire-0
   - --share=network
   - --persist=.config
   - --filesystem=xdg-videos
