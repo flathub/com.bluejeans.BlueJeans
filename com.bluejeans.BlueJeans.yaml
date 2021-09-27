@@ -77,11 +77,9 @@ modules:
         size: 83226268
         x-checker-data:
           type: html
-          url: https://www.bluejeans.com/downloads
-          version-pattern: <a href="https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_([\d\.-]*).rpm"
-            class="Button" aria-label="Download BlueJeans for Linux">
-          url-pattern: <a href="(https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_[\d\.-]*.rpm)"
-            class="Button" aria-label="Download BlueJeans for Linux">
+          url: https://swdl.bluejeans.com/desktop-app/linux/ga.manifest.json
+          version-pattern: \"https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_([\d\.-]*).rpm\"
+          url-pattern: \"(https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_[\d\.-]*.rpm)\"
           only-arches: [x86_64]
       - type: script
         dest-filename: apply_extra
