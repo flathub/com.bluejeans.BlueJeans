@@ -72,16 +72,14 @@ modules:
         path: com.bluejeans.BlueJeans-96x96.png
       - type: extra-data
         filename: bluejeans.rpm
-        url: https://swdl.bluejeans.com/desktop-app/linux/2.23.0/BlueJeans_2.23.0.39.rpm
-        sha256: 2c6835e0a27f8449d2692add4e5b58f585efecd7a491fa3aeae2e4c63331f002
-        size: 83226268
+        url: https://swdl.bluejeans.com/desktop-app/linux/2.24.0/BlueJeans_2.24.0.89.rpm
+        sha256: ae7797f32b3fa0a7d52dabc0664e51268b8e66456ca7ef4120045e49e6222897
+        size: 85437528
         x-checker-data:
           type: html
-          url: https://www.bluejeans.com/downloads
-          version-pattern: <a href="https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_([\d\.-]*).rpm"
-            class="Button" aria-label="Download BlueJeans for Linux">
-          url-pattern: <a href="(https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_[\d\.-]*.rpm)"
-            class="Button" aria-label="Download BlueJeans for Linux">
+          url: https://swdl.bluejeans.com/desktop-app/linux/ga.manifest.json
+          version-pattern: \"https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_([\d\.-]*).rpm\"
+          url-pattern: \"(https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_[\d\.-]*.rpm)\"
           only-arches: [x86_64]
       - type: script
         dest-filename: apply_extra
