@@ -24,7 +24,7 @@ static void *udev_symbol(const char *symbol)
 	static void *libudev;
 	void *sym;
 	if (!libudev)
-		libudev = dlopen("libudev.so.1.6.18", RTLD_LOCAL | RTLD_NOW);
+		libudev = dlopen("libudev.so.1.7.2", RTLD_LOCAL | RTLD_NOW);
 	sym = dlsym(libudev, symbol);
 	return sym;
 }
