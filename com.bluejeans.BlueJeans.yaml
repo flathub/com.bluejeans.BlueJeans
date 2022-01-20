@@ -84,7 +84,7 @@ modules:
       - type: script
         dest-filename: apply_extra
         commands:
-          - rpm2cpio bluejeans.rpm | cpio -idm
+          - rpm2cpio bluejeans.rpm | cpio -idm 2>&1 | grep -v blocks
           - rm bluejeans.rpm
           - mv opt/BlueJeans/* .
           - rm -r opt usr
