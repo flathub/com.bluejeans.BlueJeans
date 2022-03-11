@@ -98,7 +98,7 @@ modules:
         path: Makefile
     build-commands:
       - install -D apply_extra /app/bin/apply_extra
-      - install -Dm 644 com.bluejeans.BlueJeans.appdata.xml -t /app/share/appdata
+      - install -Dm 644 com.bluejeans.BlueJeans.appdata.xml -t /app/share/metainfo
       - install -Dm 644 com.bluejeans.BlueJeans.desktop -t /app/share/applications
       - for i in com.bluejeans.BlueJeans-*.png ; do install -Dm 644 $i /app/share/icons/hicolor/`echo
         $i | sed 's,com.bluejeans.BlueJeans-,,' | sed 's,.png,,'`/apps/com.bluejeans.BlueJeans.png
