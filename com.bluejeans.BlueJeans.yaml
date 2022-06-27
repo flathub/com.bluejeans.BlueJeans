@@ -76,10 +76,10 @@ modules:
         sha256: bd65624895d13d9e01e342cd9e829164d6f107560a9da5b66b2e860a39c52c66
         size: 88044902
         x-checker-data:
-          type: html
+          type: json
           url: https://swdl.bluejeans.com/desktop-app/linux/ga.manifest.json
-          version-pattern: \"https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_([\d\.-]*).rpm\"
-          url-pattern: \"(https://swdl.bluejeans.com/desktop-app/linux/[\d\.-]*/BlueJeans_[\d\.-]*.rpm)\"
+          version-query: .version
+          url-query: .installer_url
           only-arches: [x86_64]
       - type: script
         dest-filename: apply_extra
