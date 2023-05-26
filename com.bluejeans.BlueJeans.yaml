@@ -72,9 +72,9 @@ modules:
         path: com.bluejeans.BlueJeans-96x96.png
       - type: extra-data
         filename: bluejeans.rpm
-        url: https://swdl.bluejeans.com/desktop-app/linux/2.32.1/BlueJeans_2.32.1.3.rpm
-        sha256: 96c512ec9ca608c39ae7095624ec0b166e0a4670188b18bd2a4e42607075ec07
-        size: 94451813
+        url: https://swdl.bluejeans.com/desktop-app/linux/2.33.2/BlueJeans_2.33.2.4.rpm
+        sha256: 9f926d0ca470192f585ddcd5dd15d896ec23023e783dda4c53238536fbc4362a
+        size: 107043856
         x-checker-data:
           type: json
           url: https://swdl.bluejeans.com/desktop-app/linux/ga.manifest.json
